@@ -15,6 +15,12 @@ var express = require('express')
 
 var app = express();
 
+//
+if ('test' == app.get('env')) {
+  process.env.PORT = 3001;
+}
+
+
 //Set templating to dust
 app.engine('dust', cons.dust);
 
