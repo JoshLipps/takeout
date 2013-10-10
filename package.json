@@ -1,0 +1,27 @@
+{
+  "name": "takeout",
+  "version": "0.0.1",
+  "private": true,
+  "author" : {
+    "name" : "Josh Lipps",
+    "email" : "josh.lipps@gmail.com"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "consolidate" : "*",
+    "dustjs-linkedin": "*",
+    "dustjs-helpers": "*"
+  },
+  "engines": {
+    "node": "*",
+    "npm":  "*"
+  },
+  "devDependencies" : {
+    "mocha":"*",
+    "should":"*"
+  }
+}
