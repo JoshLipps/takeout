@@ -17,7 +17,7 @@
     "dustjs-helpers": "*"
   },
   "engines": {
-    "node": "0.8.15",
+    "node": "0.10.20",
     "npm":  "*"
   },
   "devDependencies" : {
