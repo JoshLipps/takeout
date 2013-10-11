@@ -24,13 +24,13 @@ describe('index page', function() {
   });
 
   it('should show login form', function(){
-  	this.browser.text.should.equal('h1');
+  	this.browser.text.().should.equal('h1');
   	// 'Contact');
     //assert.equal(this.browser.text('form label'), 'First NameLast NameEmailMessage');
 
   });
 
-  it('should display \'new event\' button', function(){
+  it('should display \'new event\' button ', function(){
 
   });
 
