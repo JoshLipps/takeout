@@ -18,7 +18,11 @@
     "express": "3.x",
     "consolidate" : "*",
     "dustjs-linkedin": "*",
-    "dustjs-helpers": "*"
+    "dustjs-helpers": "*",
+    "passport":"*",
+    "connect-mongo":"*",
+    "mongoose":"*"
+    
   },
   "engines": {
     "node": "0.10.x",
