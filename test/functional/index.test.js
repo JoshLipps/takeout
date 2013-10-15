@@ -24,7 +24,7 @@ describe('index page', function() {
   });
 
   it('should show login form', function(){
-  	this.browser.text("form label").should.equal("Username Password");
+  	this.browser.text("form label").should.equal("EmailPassword");
   	// 'Contact');
     //assert.equal(this.browser.text('form label'), 'First NameLast NameEmailMessage');
 

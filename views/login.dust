@@ -1,0 +1,15 @@
+<form name="login" action="" method="get" accept-charset="utf-8">
+	<ul>
+		<li>
+			<label for="username">Email</label>
+			<input type="email" name="username" placeholder="yourname@example.com" required>
+		</li>
+		<li>
+			<label for="password">Password</label>
+			<input type="password" name="password" placeholder="password" required>
+		</li>
+		<li>
+			 <input type="submit" value="Login">
+		</li>
+	</ul>
+</form>
