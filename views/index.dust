@@ -1,5 +1,5 @@
 {>layout/}
-{>login/} 
+
 {<content}
-	This is loaded from a partial.
+	{>login/} 
 {/content}

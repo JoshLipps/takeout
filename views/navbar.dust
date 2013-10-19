@@ -1,0 +1,19 @@
+<header class="navbar">
+	<div data-role="header" data-position="fixed">
+	    <h1>{title}</h1>
+	    <span id="signinButton">
+		  <span
+		    class="g-signin"
+		    data-callback="signinCallback"
+		    data-clientid="250575426326.apps.googleusercontent.com"
+		    data-cookiepolicy="single_host_origin"
+		    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+		    data-scope="https://www.googleapis.com/auth/plus.login">
+		  </span>
+		</span>
+	    
+	    <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+
+	    <a href="#" data-icon="" class="ui-btn-right">Login</a>
+	</div>
+</header>
