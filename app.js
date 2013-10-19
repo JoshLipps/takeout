@@ -34,7 +34,7 @@ app.use(express.cookieParser());
 //connect-mongo setup
 app.use(express.session({
     store: new MongoStore({
-      url: config.url + "/session"
+      url: config.mongo.uri + "/session"
   }),
   secret: config.secret
 }));
