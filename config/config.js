@@ -9,6 +9,7 @@ config.port = process.env.PORT || 3000;
 config.env = process.env.NODE_ENV || 'development';
 config.secret = process.env.COOKIE_SECRET || '1234567890QWERTY';
 
+console.log("Starting in "+config.env+" mode.");
 
 //Enviroment specific settings
 if('production' == config.env){
