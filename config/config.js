@@ -9,7 +9,7 @@ config.port = process.env.PORT || 3000;
 config.env = process.env.NODE_ENV || 'development';
 config.secret = process.env.COOKIE_SECRET || '1234567890QWERTY';
 
-console.log("Starting in "+config.env+" mode.");
+
 
 //Enviroment specific settings
 if('production' == config.env){
@@ -21,5 +21,9 @@ if('production' == config.env){
 } else {
 	config.domain = 'localhost'
 } 
+
+console.log("Config: "+config.env+" mode.");
+console.log("Config: Port - "+config.port);
+console.log("Config: "+config.mongo.uri);
 
 module.exports = config;
