@@ -12,7 +12,9 @@ var express = require('express')
   , cons = require('consolidate')
   , domain = config.domain
   , template_engine = 'dust'
-  , MongoStore = require('connect-mongo')(express);
+  , MongoStore = require('connect-mongo')(express)
+  , passport = require('./config/passport')
+  , mongoose = require('mongoose');
 
 var app = express();
 
@@ -38,6 +40,14 @@ app.use(express.session({
   }),
   secret: config.secret
 }));
+
+//Passport initialize
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Mongoose 
+mongoose.connect(config.mongo.uri);
+
 
 app.use(app.router);
 //app.use(require('less-middleware')({ src: __dirname + '/public' }));
@@ -65,6 +75,13 @@ if ('development' == config.env) {
 //app.locals.inspect = require('util').inspect;
 
 app.get('/', routes.index);
+
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -20,6 +20,7 @@
     "dustjs-linkedin": "*",
     "dustjs-helpers": "*",
     "passport":"*",
+    "passport-local":"*",
     "connect-mongo":"*",
     "mongoose":"*"
     

@@ -18,8 +18,11 @@ if('production' == config.env){
  //this is so unit tests don't collide with dev
   config.port = 3001;
   config.domain = 'localhost'
+  config.mongo.uri ='mongodb://localhost/test';
+
 } else {
 	config.domain = 'localhost'
+	config.mongo.uri ='mongodb://localhost';
 } 
 
 console.log("Config: "+config.env+" mode.");
