@@ -13,20 +13,11 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-form">
-        <form>
-          <div class="row collapse">
-            <div class="small-8 columns">
-              <input type="text">
-            </div>
-            <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
-            </div>
-          </div>
-        </form>
-      </li>
-      <li class="divider show-for-small"></li>
-      <li class="has-form">
-        {@if cond="'{user}'"}<a class="button" href="#">Logout</a>{:else}<a class="button" href="#">Login</a>{/if}
+        {@if cond="'{user}'"}
+          <a class="button" href="logout">Logout</a>
+        {:else}
+          <a class="button" data-reveal-id="loginModal" href="#">Login</a>
+        {/if}
       </li>
     </ul>
   </section>

@@ -1,20 +1,19 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , path = require('path')
-  , config = require('./config/config')
-  , dust = require('dustjs-linkedin')
-  , cons = require('consolidate')
-  , domain = config.domain
-  , template_engine = 'dust'
-  , MongoStore = require('connect-mongo')(express)
-  , passport = require('./config/passport')
-  , mongoose = require('mongoose');
+var express = require('express'),
+  routes = require('./routes'),
+  http = require('http'),
+  path = require('path'),
+  config = require('./config/config'),
+  dust = require('dustjs-linkedin'),
+  cons = require('consolidate'),
+  domain = config.domain,
+  template_engine = 'dust',
+  MongoStore = require('connect-mongo')(express),
+  passport = require('./config/passport'),
+  mongoose = require('mongoose');
 
 var app = express();
 
@@ -35,8 +34,8 @@ app.use(express.methodOverride());
 app.use(express.cookieParser());
 //connect-mongo setup
 app.use(express.session({
-    store: new MongoStore({
-      url: config.mongo.uri + "/session"
+  store: new MongoStore({
+    url: config.mongo.uri + "/session"
   }),
   secret: config.secret
 }));
@@ -77,13 +76,20 @@ if ('development' == config.env) {
 app.get('/', routes.index);
 
 app.post('/login',
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  })
 );
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 
-http.createServer(app).listen(app.get('port'), function(){
+
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });

@@ -1,11 +1,13 @@
-
 /*
  * GET home page.
  */
 
-exports.index = function(req, res){
+exports.index = function(req, res) {
 	var template_engine = req.app.settings.template_engine;
 	res.locals.session = req.session;
-  res.render('index', { title: 'Takout',page:'index',user: req.user});
+	res.render('index', {
+		title: 'Takout',
+		page: 'index',
+		user: req.user
+	});
 };
-
