@@ -1,5 +1,5 @@
 {>layout/}
 
 {<content}
-{@if cond="'{user}'"}<div>Login Success {user.name}	!</div> {:else}{>login/}</div>{/if}
+
 {/content}
